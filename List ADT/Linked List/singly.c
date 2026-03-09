@@ -9,6 +9,28 @@ struct node
 };
 struct node *head=NULL;
 
+int Createlist(int n){
+    struct node *nn,*temp;
+    int value;
+    for(int i=1;i<=n;i++){
+        nn=(struct node*)malloc(sizeof(struct node));
+        printf("Enter the element %d ",i);
+        scanf("%d",&value);
+        nn->data=value;
+        nn->next = NULL;
+        if(head==NULL){
+            head=nn;
+            temp=head;
+        }
+        else{
+            temp->next=nn;
+            temp=nn;
+        }
+    }
+    printf("Linked list created\n");
+    return 0;
+}
+
 int Displaylist(){
     struct node *temp=head;
     if(head==NULL){
@@ -186,27 +208,5 @@ int main(){
         break;
     }}
     getch();
-    return 0;
-}
-
-int Createlist(int n){
-    struct node *nn,*temp;
-    int value;
-    for(int i=1;i<=n;i++){
-        nn=(struct node*)malloc(sizeof(struct node));
-        printf("Enter the element %d ",i);
-        scanf("%d",&value);
-        nn->data=value;
-        nn->next = NULL;
-        if(head==NULL){
-            head=nn;
-            temp=head;
-        }
-        else{
-            temp->next=nn;
-            temp=nn;
-        }
-    }
-    printf("Linked list created\n");
     return 0;
 }
