@@ -67,13 +67,11 @@ int InsertionBegin(){
 int InsertionMiddle(){
     struct node *nn,*temp=head;
     int value,pos;
-    printf("Enter the value: ");
-    scanf("%d",&value);
+    printf("Enter the value and the position: ");
+    scanf("%d%d",&value,&pos);
     nn=(struct node*)malloc(sizeof(struct node));
     nn->data=value;
     nn->next=NULL;
-    printf("Enter the position to insert: ");
-    scanf("%d",&pos);
 
     for(int i=1;i<pos-1;i++){
         if(temp==NULL){
